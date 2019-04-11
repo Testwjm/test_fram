@@ -5,7 +5,6 @@ import os.path
 from framework.browser_engine import BrowserEngine
 from framework.logger import Logger
 
-
 logger = Logger(logger="BasePage").get_log()
 
 
@@ -79,7 +78,8 @@ class BasePage(object):
         if selector_by == "i" or selector_by == "id":
             try:
                 element = self.driver.find_element_by_id(selector_value)
-                logger.info("Had find the element ' %s ' successful by %s via value: %s " % (element.text, selector_by, selector_value))
+                logger.info("Had find the element ' %s ' successful by %s via value: %s " % (
+                    element.text, selector_by, selector_value))
             except NoSuchElementException as e:
                 logger.error("NoSuchElementException: %s" % e)
                 self.get_windows_img()
@@ -96,7 +96,8 @@ class BasePage(object):
         elif selector_by == "x" or selector_by == 'xpath':
             try:
                 element = self.driver.find_element_by_xpath(selector_value)
-                logger.info("Had find the element ' %s ' successful by %s via value: %s" % (element.text, selector_by, selector_value))
+                logger.info("Had find the element ' %s ' successful by %s via value: %s" % (
+                    element.text, selector_by, selector_value))
             except NoSuchElementException as e:
                 logger.info("NoSuchElementException: %s" % e)
                 self.get_windows_img()
@@ -145,12 +146,6 @@ class BasePage(object):
     def get_page_title(self):
         logger.info("获取当前页面标题：%s" % self.driver.title)
         return self.driver.title
-
-    # 显示等待
-    @staticmethod
-    def sleep(seconds):
-        time.sleep(seconds)
-        logger("Sleep for %d seconds" % seconds)
 
 
 # test

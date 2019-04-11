@@ -1,0 +1,30 @@
+2019-04-11 14:57:22,531 - BrowserEngine - INFO - You had select Chrome browser.
+2019-04-11 14:57:22,531 - BrowserEngine - INFO - The test server url is: http://power.fofpower.com
+2019-04-11 14:57:24,747 - BrowserEngine - INFO - Starting Chrome browser.
+2019-04-11 14:57:27,414 - BrowserEngine - INFO - Open url: http://power.fofpower.com
+2019-04-11 14:57:28,534 - BrowserEngine - INFO - 最大化浏览器
+2019-04-11 14:57:28,535 - BrowserEngine - INFO - Set implicitly wait 10 seconds
+2019-04-11 14:57:28,562 - BasePage - INFO - Had find the element ' 公募数据 ' successful by xpath via value: /html/body/section/div[3]/div[1]/div[1]/span[2]
+2019-04-11 14:57:28,606 - BasePage - INFO - 点击元素：公募数据
+2019-04-11 14:57:30,631 - BasePage - INFO - Had find the element ' 1 ' successful by xpath via value: //*[@id="num2"]/div/div[1]/span[2]
+2019-04-11 14:57:32,664 - BasePage - INFO - Had find the element ' 私募数据 ' successful by xpath via value: /html/body/section/div[3]/div[1]/div[1]/span[1]
+2019-04-11 14:57:32,708 - BasePage - INFO - 点击元素：私募数据
+2019-04-11 14:57:34,731 - BasePage - INFO - Had find the element ' 3 ' successful by xpath via value: //*[@id="num2"]/div/div[1]/span[4]
+2019-04-11 14:57:36,767 - BasePage - INFO - Had find the element ' 私募全市场指数 ' successful by xpath via value: //*[text()="私募全市场指数"]
+2019-04-11 14:57:36,824 - BasePage - INFO - 点击元素：私募全市场指数
+2019-04-11 14:57:38,849 - BasePage - INFO - Had find the element ' 南华商品指数 ' successful by xpath via value: //*[text()="南华商品指数"]
+2019-04-11 14:57:38,901 - BasePage - INFO - 点击元素：南华商品指数
+2019-04-11 14:57:40,921 - BasePage - INFO - Had find the element ' 南华商品指数 ' successful by xpath via value: //*[text()='南华商品指数']
+2019-04-11 14:57:42,957 - BasePage - INFO - Had find the element '  ' successful by xpath via value: //*[@id="dropDown"]/img
+2019-04-11 14:57:43,004 - BasePage - INFO - 点击元素：
+2019-04-11 14:57:45,027 - BasePage - INFO - Had find the element ' 2432.35 ' successful by xpath via value: //*[@id="dropLoad"]/div[1]/div[1]/div[2]
+2019-04-11 14:57:47,078 - BasePage - INFO - Had find the element '  ' successful by xpath via value: //*[@id="dropUp"]/img
+2019-04-11 14:57:47,119 - BasePage - INFO - 点击元素：
+2019-04-11 14:57:47,148 - BasePage - INFO - Had find the element ' 欢迎加入 ' successful by xpath via value: /html/body/section/div[5]/button
+2019-04-11 14:57:47,199 - BasePage - INFO - 点击元素：欢迎加入
+2019-04-11 14:57:49,224 - BasePage - INFO - Had find the element ' HFMI指数持续招募中，请扫描下方二维码 ' successful by xpath via value: //*[@id="join"]/div/div/div[2]/div/div[2]/div[12]
+2019-04-11 14:57:51,257 - BasePage - INFO - Had find the element ' 确认 ' successful by xpath via value: //*[@id="join"]/div/div/div[3]/button
+2019-04-11 14:57:51,301 - BasePage - INFO - 点击元素：确认
+2019-04-11 14:57:54,325 - BasePage - INFO - Had find the element ' 【HFMI指数报告】11月HFMI指数为53.82，环比下降3.10%，私募基金经理对于后市行情预期有所下降。 ' successful by xpath via value: /html/body/section/div[6]/div[2]/div[1]/a/div[1]
+2019-04-11 14:57:54,403 - BasePage - INFO - 点击元素：【HFMI指数报告】11月HFMI指数为53.82，环比下降3.10%，私募基金经理对于后市行情预期有所下降。
+2019-04-11 14:57:59,173 - BrowserEngine - INFO - 关闭浏览器

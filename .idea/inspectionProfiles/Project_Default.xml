@@ -1,0 +1,14 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="framework.base_page.automation_framework_demo" />
+          <option value="framework.browser_engine.automation_framework_demo" />
+          <option value="pageobjects.baidu_homepage.*" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

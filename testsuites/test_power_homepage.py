@@ -4,7 +4,6 @@ from testsuites.MyTest import MyTest
 
 
 class FofPowerHomePage(MyTest):
-
     def test_power_a(self):
         homepage = PowerHomePage(self.driver)
         homepage.power_homepage_public()
@@ -67,7 +66,7 @@ class FofPowerHomePage(MyTest):
         error_mes = homepage.find_element('xpath=>//*[@id="join"]/div/div/div[2]/div/div[2]/div[12]').text
         try:
             assert error_mes == u'HFMI指数持续招募中，请扫描下方二维码'
-            # print('私募基金管理人HFMI指数 pass.')
+            print('私募基金管理人HFMI指数 pass.')
         except Exception as e:
             print('私募基金管理人HFMI指数 fail', format(e))
             print(error_mes)
@@ -81,7 +80,7 @@ class FofPowerHomePage(MyTest):
         try:
             assert u"首页" not in homepage.get_page_title()
             print('---首页结束---')
-            # print('基金研究院 pass.\n---首页结束---')
+            print('基金研究院 pass.')
         except Exception as e:
-            print('基金研究院 fail.\n---首页结束---', format(e))
+            print('基金研究院 fail.', format(e))
         time.sleep(5)
