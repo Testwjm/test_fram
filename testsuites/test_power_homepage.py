@@ -78,10 +78,11 @@ class FofPowerHomePage(MyTest):
         homepage = PowerHomePage(self.driver)
         homepage.power_homepage_link()
         time.sleep(2)
+        homepage.current_handel()
+        time.sleep(2)
         # 断言，基金研究院
         try:
             assert u"首页" not in homepage.get_page_title()
-            print('---首页结束---')
             print('基金研究院 pass.')
         except Exception as e:
             print('基金研究院 fail.', format(e))
