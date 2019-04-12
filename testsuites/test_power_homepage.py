@@ -4,7 +4,9 @@ from testsuites.MyTest import MyTest
 
 
 class FofPowerHomePage(MyTest):
-    def test_power_a(self):
+    """首页"""
+
+    def test_homepage_a(self):
         homepage = PowerHomePage(self.driver)
         homepage.power_homepage_public()
         time.sleep(2)
@@ -18,7 +20,7 @@ class FofPowerHomePage(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_power_b(self):
+    def test_homepage_b(self):
         homepage = PowerHomePage(self.driver)
         homepage.power_homepage_private()
         time.sleep(2)
@@ -32,7 +34,7 @@ class FofPowerHomePage(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_power_c(self):
+    def test_homepage_c(self):
         homepage = PowerHomePage(self.driver)
         homepage.power_homepage_index()
         time.sleep(2)
@@ -44,7 +46,7 @@ class FofPowerHomePage(MyTest):
             print('私募综合业绩指数 fail', format(e))
         time.sleep(2)
 
-    def test_power_d(self):
+    def test_homepage_d(self):
         homepage = PowerHomePage(self.driver)
         homepage.power_homepage_dropdown()
         time.sleep(2)
@@ -58,7 +60,7 @@ class FofPowerHomePage(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_power_e(self):
+    def test_homepage_e(self):
         homepage = PowerHomePage(self.driver)
         homepage.power_homepage_welcome()
         time.sleep(2)
@@ -72,7 +74,7 @@ class FofPowerHomePage(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_power_f(self):
+    def test_homepage_f(self):
         homepage = PowerHomePage(self.driver)
         homepage.power_homepage_link()
         time.sleep(2)
