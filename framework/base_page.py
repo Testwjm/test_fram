@@ -136,8 +136,8 @@ class BasePage(object):
 
         el = self.find_element(selector)
         try:
-            el.click()
             logger.info("点击元素：%s" % el.text)
+            el.click()
         except NameError as e:
             logger.error("点击元素失败：%s" % e)
             self.get_windows_img()
@@ -146,6 +146,17 @@ class BasePage(object):
     def get_page_title(self):
         logger.info("获取当前页面标题：%s" % self.driver.title)
         return self.driver.title
+
+    # 切换到新窗口
+    def current_handel(self):
+        all_handles = self.driver.window_handles
+        for handle in all_handles:
+            self.driver.switch_to.window(handle)
+
+    # 刷新浏览器
+    def refresh(self):
+        self.driver.refresh()
+        logger.info("刷新浏览器")
 
 
 # test

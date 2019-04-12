@@ -1,0 +1,18 @@
+2019-04-12 13:36:54,920 - BrowserEngine - INFO - You had select Chrome browser.
+2019-04-12 13:36:54,920 - BrowserEngine - INFO - The test server url is: http://power.fofpower.com
+2019-04-12 13:36:57,832 - BrowserEngine - INFO - Starting Chrome browser.
+2019-04-12 13:37:02,036 - BrowserEngine - INFO - Open url: http://power.fofpower.com
+2019-04-12 13:37:03,157 - BrowserEngine - INFO - 最大化浏览器
+2019-04-12 13:37:03,158 - BrowserEngine - INFO - Set implicitly wait 10 seconds
+2019-04-12 13:37:03,184 - BasePage - INFO - Had find the element ' 首页 ' successful by xpath via value: //*[@id="navUl"]/li[1]/a
+2019-04-12 13:37:03,232 - BasePage - INFO - 点击元素：首页
+2019-04-12 13:37:05,258 - BasePage - INFO - Had find the element '  ' successful by xpath via value: //*[@id="userName"]
+2019-04-12 13:37:05,359 - BasePage - INFO - 在输入框输入：15107045860
+2019-04-12 13:37:07,403 - BasePage - INFO - Had find the element '  ' successful by xpath via value: //*[@id="password"]
+2019-04-12 13:37:07,471 - BasePage - INFO - 在输入框输入：045860
+2019-04-12 13:37:09,494 - BasePage - INFO - Had find the element ' 登录 ' successful by xpath via value: //*[@id="btnSubmit"]
+2019-04-12 13:37:09,543 - BasePage - INFO - 点击元素：登录
+2019-04-12 13:37:11,591 - BasePage - INFO - Had find the element ' 投前筛选 ' successful by xpath via value: //*[@id="navUl"]/li[3]/span
+2019-04-12 13:37:11,636 - BasePage - INFO - 点击元素：投前筛选
+2019-04-12 13:37:13,660 - BasePage - INFO - Had find the element ' 产品透视 ' successful by xpath via value: //*[@id="navUl"]/li[3]/ul/li[1]/a/span
+2019-04-12 13:37:18,364 - BrowserEngine - INFO - 关闭浏览器
