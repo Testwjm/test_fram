@@ -1,11 +1,11 @@
 import time
-from pageobjects.industry_data import PowerIndustryData
+from pageobjects.industry_data import IndustryData
 from testsuites.MyTest import MyTest
 
 
-class FofPowerIndustryData(MyTest):
+class TestIndustryData(MyTest):
     """行业数据"""
 
-    def test_industry_data_pass(self):
-        industry = PowerIndustryData
-        industry.industry_data_pass()
+    def test_industry_data_alogin(self):
+        industry = IndustryData(self.driver)
+        industry.industry_data_login()

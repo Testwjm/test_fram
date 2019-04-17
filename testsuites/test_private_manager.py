@@ -1,11 +1,12 @@
 import time
-from pageobjects.private_manager import PowerPrivateManager
+from pageobjects.private_manager import PrivateManager
 from testsuites.MyTest import MyTest
 
 
-class FofPowerPrivateManager(MyTest):
+class TestPrivateManager(MyTest):
     """私募基金经理详情页"""
 
-    def test_private_manager_pass(self):
-        private = PowerPrivateManager(self.driver)
-        private.private_manager_pass()
+    def test_private_manager_alogin(self):
+        private = PrivateManager(self.driver)
+        private.private_manager_login()
+

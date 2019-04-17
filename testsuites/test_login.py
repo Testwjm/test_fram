@@ -1,17 +1,17 @@
 import time
-from pageobjects.login import PowerLogin
+from pageobjects.login import Login
 from testsuites.MyTest import MyTest
 
 
-class FofPowerLogin(MyTest):
+class TestLogin(MyTest):
     """登录"""
 
-    def test_login_a(self):
+    def test_login_atest(self):
         """手机号、密码为空"""
-        login = PowerLogin(self.driver)
-        login.power_login_homepage()
+        login = Login(self.driver)
+        login.login_homepage()
         time.sleep(2)
-        login.power_login_button()
+        login.login_button()
         time.sleep(2)
         error_mes = login.find_element('xpath=>//*[@id="userName"]').text
         try:
@@ -22,12 +22,12 @@ class FofPowerLogin(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_login_b(self):
+    def test_login_btest(self):
         """密码为空，手机号不为空"""
-        login = PowerLogin(self.driver)
-        login.power_login_username('15107045860')
+        login = Login(self.driver)
+        login.login_username('15107045860')
         time.sleep(2)
-        login.power_login_button()
+        login.login_button()
         time.sleep(2)
         error_mes = login.find_element('xpath=>//*[@id="password"]').text
         try:
@@ -38,14 +38,14 @@ class FofPowerLogin(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_login_c(self):
+    def test_login_ctest(self):
         """手机号为空，密码不为空"""
-        login = PowerLogin(self.driver)
-        login.power_login_clear()
+        login = Login(self.driver)
+        login.login_clear()
         time.sleep(2)
-        login.power_login_password('045860')
+        login.login_password('045860')
         time.sleep(2)
-        login.power_login_button()
+        login.login_button()
         time.sleep(2)
         error_mes = login.find_element('xpath=>//*[@id="userName"]').text
         try:
@@ -56,16 +56,16 @@ class FofPowerLogin(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_login_d(self):
+    def test_login_dtest(self):
         """错误的手机号码、密码"""
-        login = PowerLogin(self.driver)
-        login.power_login_clear()
+        login = Login(self.driver)
+        login.login_clear()
         time.sleep(2)
-        login.power_login_username('13111111111')
+        login.login_username('13111111111')
         time.sleep(2)
-        login.power_login_password('111111')
+        login.login_password('111111')
         time.sleep(2)
-        login.power_login_button()
+        login.login_button()
         time.sleep(2)
         error_mes = login.find_element('xpath=>//*[@id="btnSubmit"]/span').text
         try:
@@ -76,16 +76,16 @@ class FofPowerLogin(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_login_e(self):
+    def test_login_etest(self):
         """错误的密码，正确的手机号"""
-        login = PowerLogin(self.driver)
-        login.power_login_clear()
+        login = Login(self.driver)
+        login.login_clear()
         time.sleep(2)
-        login.power_login_username('15107045860')
+        login.login_username('15107045860')
         time.sleep(2)
-        login.power_login_password('111111')
+        login.login_password('111111')
         time.sleep(2)
-        login.power_login_button()
+        login.login_button()
         time.sleep(2)
         error_mes = login.find_element('xpath=>//*[@id="btnSubmit"]/span').text
         try:
@@ -96,16 +96,16 @@ class FofPowerLogin(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_login_f(self):
+    def test_login_ftest(self):
         """错误的手机号，正确的密码"""
-        login = PowerLogin(self.driver)
-        login.power_login_clear()
+        login = Login(self.driver)
+        login.login_clear()
         time.sleep(2)
-        login.power_login_username('13107045860')
+        login.login_username('13107045860')
         time.sleep(2)
-        login.power_login_password('045860')
+        login.login_password('045860')
         time.sleep(2)
-        login.power_login_button()
+        login.login_button()
         error_mes = login.find_element('xpath=>//*[@id="btnSubmit"]/span').text
         try:
             assert error_mes == u'登录'
@@ -115,16 +115,16 @@ class FofPowerLogin(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_login_g(self):
+    def test_login_gtest(self):
         """登录成功"""
-        login = PowerLogin(self.driver)
-        login.power_login_clear()
+        login = Login(self.driver)
+        login.login_clear()
         time.sleep(2)
-        login.power_login_username('15107045860')
+        login.login_username('15107045860')
         time.sleep(1)
-        login.power_login_password('045860')
+        login.login_password('045860')
         time.sleep(1)
-        login.power_login_button()
+        login.login_button()
         time.sleep(2)
         # 断言，登录成功
         error_mes = login.find_element('xpath=>//*[@id="topbar"]/div[1]/a[1]').text  # 基金公司值含1

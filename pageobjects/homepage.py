@@ -2,7 +2,7 @@ import time
 from framework.base_page import BasePage
 
 
-class PowerHomePage(BasePage):
+class HomePage(BasePage):
     """首页"""
     public_data = 'xpath=>/html/body/section/div[3]/div[1]/div[1]/span[2]'  # 公募数据
     public_text = '//*[@id="num2"]/div/div[1]/span[2]'
@@ -15,25 +15,25 @@ class PowerHomePage(BasePage):
     confirm = 'xpath=>//*[@id="join"]/div/div/div[3]/button'  # 确定
     hyper_link = 'xpath=>/html/body/section/div[6]/div[2]/div[1]/a/div[1]'  # 第一个超链接
 
-    def power_homepage_public(self):
+    def homepage_public(self):
         self.click(self.public_data)  # 点击公募数据
 
-    def power_homepage_private(self):
+    def homepage_private(self):
         self.click(self.private_data)  # 点击私募数据
 
-    def power_homepage_index(self):
+    def homepage_index(self):
         self.click(self.index_sm)  # 点击私募全市场指数
         time.sleep(2)
         self.click(self.index_nfi)  # 点击南华商品指数
 
-    def power_homepage_dropdown(self):
+    def homepage_dropdown(self):
         self.click(self.drop_down)  # 展开
 
-    def power_homepage_welcome(self):
+    def homepage_welcome(self):
         self.click(self.drop_up)  # 收起
         self.click(self.welcome_join)  # 欢迎加入
 
-    def power_homepage_link(self):
+    def homepage_link(self):
         self.click(self.confirm)  # 确定
         time.sleep(3)
         self.click(self.hyper_link)  # 点击超链接

@@ -1,14 +1,14 @@
 import time
-from pageobjects.homepage import PowerHomePage
+from pageobjects.homepage import HomePage
 from testsuites.MyTest import MyTest
 
 
-class FofPowerHomePage(MyTest):
+class TestHomePage(MyTest):
     """首页"""
 
-    def test_homepage_a(self):
-        homepage = PowerHomePage(self.driver)
-        homepage.power_homepage_public()
+    def test_homepage_apublic(self):
+        homepage = HomePage(self.driver)
+        homepage.homepage_public()
         time.sleep(2)
         # 断言，公募数据
         error_mes = homepage.find_element('xpath=>//*[@id="num2"]/div/div[1]/span[2]').text  # 基金公司值含1
@@ -20,9 +20,9 @@ class FofPowerHomePage(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_homepage_b(self):
-        homepage = PowerHomePage(self.driver)
-        homepage.power_homepage_private()
+    def test_homepage_bprivate(self):
+        homepage = HomePage(self.driver)
+        homepage.homepage_private()
         time.sleep(2)
         # 断言，私募数据
         error_mes = homepage.find_element('xpath=>//*[@id="num2"]/div/div[1]/span[4]').text  # 基金公司值含3
@@ -34,9 +34,9 @@ class FofPowerHomePage(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_homepage_c(self):
-        homepage = PowerHomePage(self.driver)
-        homepage.power_homepage_index()
+    def test_homepage_cindex(self):
+        homepage = HomePage(self.driver)
+        homepage.homepage_index()
         time.sleep(2)
         # 断言，私募综合业绩指数
         try:
@@ -46,9 +46,9 @@ class FofPowerHomePage(MyTest):
             print('私募综合业绩指数 fail', format(e))
         time.sleep(2)
 
-    def test_homepage_d(self):
-        homepage = PowerHomePage(self.driver)
-        homepage.power_homepage_dropdown()
+    def test_homepage_dropdown(self):
+        homepage = HomePage(self.driver)
+        homepage.homepage_dropdown()
         time.sleep(2)
         # 断言，私募分策略业绩指数情况
         error_mes = homepage.find_element('xpath=>//*[@id="dropLoad"]/div[1]/div[1]/div[2]').text  # 宏观策略私募指数值为2303.72
@@ -60,9 +60,9 @@ class FofPowerHomePage(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_homepage_e(self):
-        homepage = PowerHomePage(self.driver)
-        homepage.power_homepage_welcome()
+    def test_homepage_ewelcome(self):
+        homepage = HomePage(self.driver)
+        homepage.homepage_welcome()
         time.sleep(2)
         # 断言，私募基金管理人HFMI指数
         error_mes = homepage.find_element('xpath=>//*[@id="join"]/div/div/div[2]/div/div[2]/div[12]').text
@@ -74,9 +74,9 @@ class FofPowerHomePage(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_homepage_f(self):
-        homepage = PowerHomePage(self.driver)
-        homepage.power_homepage_link()
+    def test_homepage_flink(self):
+        homepage = HomePage(self.driver)
+        homepage.homepage_link()
         time.sleep(2)
         homepage.current_handel()
         time.sleep(2)

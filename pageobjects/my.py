@@ -2,7 +2,7 @@ import time
 from framework.base_page import BasePage
 
 
-class PowerMy(BasePage):
+class My(BasePage):
     """我的"""
     homepage = 'xpath=>//*[@id="navUl"]/li[1]/a'  # 首页
     my_click = 'xpath=>//*[@id="navUl"]/li[2]/a/span'  # 我的
@@ -12,7 +12,7 @@ class PowerMy(BasePage):
     strategy = 'xpath=>//*[@id="fundModule"]/div[1]/span[8]'  # 多策略
     my_public = 'xpath=>//*[@id="historyUl"]/li[2]'  # 公募
 
-    def power_my_login(self):
+    def my_login(self):
         self.click(self.homepage)
         time.sleep(2)
         self.type(self.username, '15107045860')
@@ -22,5 +22,5 @@ class PowerMy(BasePage):
         self.click(self.button)
         time.sleep(2)
 
-    def power_my_click(self):
+    def my_clicked(self):
         self.click(self.my_click)

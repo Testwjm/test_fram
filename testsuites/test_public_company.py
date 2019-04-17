@@ -1,11 +1,11 @@
 import time
-from pageobjects.public_company import PowerPublicCompany
+from pageobjects.public_company import PublicCompany
 from testsuites.MyTest import MyTest
 
 
-class FofPowerPublicCompany(MyTest):
+class TestPublicCompany(MyTest):
     """公募公司详情页"""
 
-    def public_company_pass(self):
-        public = PowerPublicCompany(self.driver)
-        public.public_company_pass()
+    def public_company_alogin(self):
+        public = PublicCompany(self.driver)
+        public.public_company_login()

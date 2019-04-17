@@ -1,11 +1,11 @@
 import time
-from pageobjects.public_manager import PowerPublicManager
+from pageobjects.public_manager import PublicManager
 from testsuites.MyTest import MyTest
 
 
-class FofPowerPublicManager(MyTest):
+class TestPublicManager(MyTest):
     """公募基金经理详情页"""
 
-    def test_public_manager_pass(self):
-        public = PowerPublicManager
-        public.public_manager_pass()
+    def test_public_manager_alogin(self):
+        public = PublicManager(self.driver)
+        public.public_manager_login()
