@@ -17,7 +17,13 @@ class PrivateCompany(BasePage):
     company_url = 'xpath=>//*[@id="netNav"]'  # 公司网址
     core_personnel = 'xpath=>//*[@id="org_name"]/a[1]'  # 核心人员卓利伟
     show_all = 'xpath=>//*[@id="org_return_btn"]/button[2]'  # 显示全部
-    y1_rank = '//*[@id="rankingDate"]/button[3]'  # 近一年同类排名
+    y1_rank = 'xpath=>//*[@id="rankingDate"]/button[3]'  # 近一年同类排名
+    record_information = 'xpath=>//*[@id="menuUl"]/li[2]/a'  # 备案信息
+    performance_indicators = 'xpath=>//*[@id="menuUl"]/li[3]/a'  # 业绩指标
+    its_products = 'xpath=>//*[@id="menuUl"]/li[4]/a'  # 旗下产品
+    macro_strategy = 'xpath=>//*[@id="6010601"]'  # 宏观策略
+    team_information = 'xpath=>//*[@id="menuUl"]/li[5]/a'  # 团队信息
+    fund_manager = 'xpath=>//*[@id="teamTab"]/tbody/tr[1]/td[2]/a'  # 基金经理
 
     def private_company_login(self):
         """登录"""
@@ -61,4 +67,28 @@ class PrivateCompany(BasePage):
     def private_company_rank(self):
         """同类排名"""
         self.click(self.y1_rank)
+        time.sleep(5)
+
+    def private_record_information(self):
+        """备案信息"""
+        self.click(self.record_information)
+        time.sleep(5)
+
+    def private_performance_indicators(self):
+        """业绩指标"""
+        self.click(self.performance_indicators)
+        time.sleep(5)
+
+    def private_its_products(self):
+        """旗下产品"""
+        self.click(self.its_products)
+        time.sleep(15)
+        self.click(self.macro_strategy)
+        time.sleep(5)
+
+    def private_team_information(self):
+        """团队信息"""
+        self.click(self.team_information)
+        time.sleep(8)
+        self.click(self.fund_manager)
         time.sleep(5)
