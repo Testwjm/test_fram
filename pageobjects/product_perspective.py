@@ -9,6 +9,8 @@ class ProductPerspective(BasePage):
     username = 'xpath=>//*[@id="userName"]'  # 手机号
     password = 'xpath=>//*[@id="password"]'  # 密码
     button = 'xpath=>//*[@id="btnSubmit"]'  # 登录
+    pre_screening = 'xpath=>//*[@id="navUl"]/li[3]/span'  # 投前筛选
+    product_perspective = 'xpath=>//*[@id="navUl"]/li[3]/ul/li[1]/a'  # 产品透视
 
     def product_perspective_login(self):
         self.click(self.homepage)
@@ -19,3 +21,7 @@ class ProductPerspective(BasePage):
         time.sleep(2)
         self.click(self.button)
         time.sleep(2)
+        self.click(self.pre_screening)
+        time.sleep(2)
+        self.click(self.product_perspective)
+        time.sleep(5)

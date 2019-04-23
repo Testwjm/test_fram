@@ -8,6 +8,8 @@ class AttendExcavate(BasePage):
     username = 'xpath=>//*[@id="userName"]'  # 手机号
     password = 'xpath=>//*[@id="password"]'  # 密码
     button = 'xpath=>//*[@id="btnSubmit"]'  # 登录
+    pre_screening = 'xpath=>//*[@id="navUl"]/li[3]/span'  # 投前筛选
+    attend_excavate = 'xpath=>//*[@id="navUl"]/li[3]/ul/li[2]/a'  # 投顾挖掘
 
     def attend_excavate_login(self):
         self.click(self.homepage)
@@ -18,3 +20,7 @@ class AttendExcavate(BasePage):
         time.sleep(2)
         self.click(self.button)
         time.sleep(2)
+        self.click(self.pre_screening)
+        time.sleep(2)
+        self.click(self.attend_excavate)
+        time.sleep(5)

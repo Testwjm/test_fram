@@ -6,7 +6,8 @@ from testsuites.MyTest import MyTest
 class TestHomePage(MyTest):
     """首页"""
 
-    def test_homepage_apublic(self):
+    def test_homepage_case1(self):
+        """公募数据"""
         homepage = HomePage(self.driver)
         homepage.homepage_public()
         time.sleep(2)
@@ -20,7 +21,8 @@ class TestHomePage(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_homepage_bprivate(self):
+    def test_homepage_case2(self):
+        """私募数据"""
         homepage = HomePage(self.driver)
         homepage.homepage_private()
         time.sleep(2)
@@ -34,7 +36,8 @@ class TestHomePage(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_homepage_cindex(self):
+    def test_homepage_case3(self):
+        """私募综合业绩指数"""
         homepage = HomePage(self.driver)
         homepage.homepage_index()
         time.sleep(2)
@@ -46,7 +49,8 @@ class TestHomePage(MyTest):
             print('私募综合业绩指数 fail', format(e))
         time.sleep(2)
 
-    def test_homepage_dropdown(self):
+    def test_homepage_case4(self):
+        """私募分策略业绩指数情况"""
         homepage = HomePage(self.driver)
         homepage.homepage_dropdown()
         time.sleep(2)
@@ -60,7 +64,8 @@ class TestHomePage(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_homepage_ewelcome(self):
+    def test_homepage_case5(self):
+        """私募基金管理人HFMI指数"""
         homepage = HomePage(self.driver)
         homepage.homepage_welcome()
         time.sleep(2)
@@ -74,7 +79,8 @@ class TestHomePage(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_homepage_flink(self):
+    def test_homepage_case6(self):
+        """基金研究院"""
         homepage = HomePage(self.driver)
         homepage.homepage_link()
         time.sleep(2)

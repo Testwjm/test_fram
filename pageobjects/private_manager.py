@@ -9,6 +9,8 @@ class PrivateManager(BasePage):
     username = 'xpath=>//*[@id="userName"]'  # 手机号
     password = 'xpath=>//*[@id="password"]'  # 密码
     button = 'xpath=>//*[@id="btnSubmit"]'  # 登录
+    pre_screening = 'xpath=>//*[@id="navUl"]/li[3]/span'  # 投前筛选
+    fund_manager = 'xpath=>//*[@id="navUl"]/li[3]/ul/li[3]/a'  # 基金经理
 
     def private_manager_login(self):
         self.click(self.homepage)
@@ -19,3 +21,7 @@ class PrivateManager(BasePage):
         time.sleep(2)
         self.click(self.button)
         time.sleep(2)
+        self.click(self.pre_screening)
+        time.sleep(2)
+        self.click(self.fund_manager)
+        time.sleep(5)

@@ -159,10 +159,18 @@ class BasePage(object):
         logger.info("刷新浏览器")
 
     # 控制浏览器往上
-    def execute_script(self):
+    def execute_script_up(self):
         self.driver.execute_script('window.scrollTo(0,0)')
         logger.info("控制浏览器往上")
 
+    # 控制浏览器到中间（下）
+    def execute_script_in(self):
+        self.driver.execute_script('window.scrollBy(0, 400)')
+
+    # 控制浏览器到最下
+    def execute_script_down(self):
+        self.driver.execute_script('window.scrollBy(0, 10000)')
+        logger.info("控制浏览器到最下")
 
 # test
 '''

@@ -6,6 +6,6 @@ from pageobjects.my import My
 class TestMy(MyTest):
     """我的"""
 
-    def test_my_alogin(self):
+    def test_my_case1(self):
         my = My(self.driver)
         my.my_login()

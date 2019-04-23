@@ -6,12 +6,12 @@ from testsuites.MyTest import MyTest
 class TestPrivateCompany(MyTest):
     """私募公司详情页"""
 
-    def test_private_company_alogin(self):
+    def test_private_company_case1(self):
         """登录"""
         private = PrivateCompany(self.driver)
         private.private_company_login()
 
-    def test_private_company_bdetails(self):
+    def test_private_company_case2(self):
         """进入详情页"""
         private = PrivateCompany(self.driver)
         private.private_company_details()
@@ -24,7 +24,7 @@ class TestPrivateCompany(MyTest):
             print('上海高毅资产详情 fail', format(e))
         time.sleep(2)
 
-    def test_private_company_curl(self):
+    def test_private_company_case3(self):
         """头部，公司网址"""
         private = PrivateCompany(self.driver)
         # 断言，投资策略
@@ -122,7 +122,7 @@ class TestPrivateCompany(MyTest):
         private.current_handel()
         time.sleep(2)
 
-    def test_private_company_dpersonnel(self):
+    def test_private_company_case4(self):
         """核心人员"""
         private = PrivateCompany(self.driver)
         private.private_company_personnel()
@@ -139,7 +139,7 @@ class TestPrivateCompany(MyTest):
         private.current_handel()
         time.sleep(2)
 
-    def test_private_company_etrend(self):
+    def test_private_company_case5(self):
         """投顾综合指数走势"""
         private = PrivateCompany(self.driver)
         # 断言，产品分布
@@ -164,7 +164,7 @@ class TestPrivateCompany(MyTest):
         time.sleep(2)
         private.private_company_trend()
 
-    def test_private_company_frank(self):
+    def test_private_company_case6(self):
         """同类排名"""
         private = PrivateCompany(self.driver)
         private.private_company_rank()
@@ -203,7 +203,7 @@ class TestPrivateCompany(MyTest):
         private.execute_script()
         time.sleep(2)
 
-    def test_private_company_grecord(self):
+    def test_private_company_case7(self):
         """备案信息"""
         private = PrivateCompany(self.driver)
         private.private_record_information()
@@ -249,7 +249,7 @@ class TestPrivateCompany(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_private_company_hindicators(self):
+    def test_private_company_case8(self):
         """业绩指标"""
         private = PrivateCompany(self.driver)
         private.private_performance_indicators()
@@ -395,7 +395,7 @@ class TestPrivateCompany(MyTest):
         private.execute_script()
         time.sleep(2)
 
-    def test_private_company_iproducts(self):
+    def test_private_company_case9(self):
         """旗下产品"""
         private = PrivateCompany(self.driver)
         private.private_its_products()
@@ -429,7 +429,7 @@ class TestPrivateCompany(MyTest):
         private.execute_script()
         time.sleep(2)
 
-    def test_private_company_jteam(self):
+    def test_private_company_case10(self):
         """团队信息"""
         private = PrivateCompany(self.driver)
         private.private_team_information()

@@ -6,7 +6,7 @@ from testsuites.MyTest import MyTest
 class TestLogin(MyTest):
     """登录"""
 
-    def test_login_atest(self):
+    def test_login_case1(self):
         """手机号、密码为空"""
         login = Login(self.driver)
         login.login_homepage()
@@ -22,7 +22,7 @@ class TestLogin(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_login_btest(self):
+    def test_login_case2(self):
         """密码为空，手机号不为空"""
         login = Login(self.driver)
         login.login_username('15107045860')
@@ -38,7 +38,7 @@ class TestLogin(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_login_ctest(self):
+    def test_login_case3(self):
         """手机号为空，密码不为空"""
         login = Login(self.driver)
         login.login_clear()
@@ -56,7 +56,7 @@ class TestLogin(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_login_dtest(self):
+    def test_login_case4(self):
         """错误的手机号码、密码"""
         login = Login(self.driver)
         login.login_clear()
@@ -76,7 +76,7 @@ class TestLogin(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_login_etest(self):
+    def test_login_case5(self):
         """错误的密码，正确的手机号"""
         login = Login(self.driver)
         login.login_clear()
@@ -96,7 +96,7 @@ class TestLogin(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_login_ftest(self):
+    def test_login_case6(self):
         """错误的手机号，正确的密码"""
         login = Login(self.driver)
         login.login_clear()
@@ -115,7 +115,7 @@ class TestLogin(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_login_gtest(self):
+    def test_login_case7(self):
         """登录成功"""
         login = Login(self.driver)
         login.login_clear()
