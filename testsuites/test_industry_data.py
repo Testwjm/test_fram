@@ -149,7 +149,7 @@ class TestIndustryData(MyTest):
         """指数相关性"""
         industry = IndustryData(self.driver)
         industry.industry_data_relativity()
-        industry.execute_script()
+        industry.execute_script_up()
         time.sleep(2)
 
     def test_industry_data_case6(self):
