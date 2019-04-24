@@ -205,6 +205,7 @@ class TestPrivateFund(MyTest):
         time.sleep(2)
 
     def test_private_fund_case3(self):
+        """历史净值"""
         private = PrivateFund(self.driver)
         private.private_fund_history()
         # 断言，净值日期
@@ -259,6 +260,7 @@ class TestPrivateFund(MyTest):
         time.sleep(2)
 
     def test_private_fund_case4(self):
+        """同类排名"""
         private = PrivateFund(self.driver)
         private.private_fund_rank()
         error_mes1 = private.find_element(
