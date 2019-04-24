@@ -200,7 +200,7 @@ class TestPrivateCompany(MyTest):
             print('私募投顾投资顾问简介 fail', format(e))
             print(error_mes)
         time.sleep(2)
-        private.execute_script()
+        private.execute_script_up()
         time.sleep(2)
 
     def test_private_company_case7(self):
@@ -392,7 +392,7 @@ class TestPrivateCompany(MyTest):
             print('胜率 fail', format(e))
             print(error_mes)
         time.sleep(2)
-        private.execute_script()
+        private.execute_script_up()
         time.sleep(2)
 
     def test_private_company_case9(self):
@@ -426,10 +426,10 @@ class TestPrivateCompany(MyTest):
             print('产品相关性矩阵 fail', format(e))
             print(error_mes)
         time.sleep(2)
-        private.execute_script()
+        private.execute_script_up()
         time.sleep(2)
 
-    def test_private_company_case10(self):
+    def test_private_company_case91(self):
         """团队信息"""
         private = PrivateCompany(self.driver)
         private.private_team_information()
