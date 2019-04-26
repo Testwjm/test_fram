@@ -19,7 +19,7 @@ class TestPublicFund(MyTest):
         # 断言，公募基金详情页
         try:
             assert u"华夏成长混合" in public.get_page_title()
-            print('公募基金经理详情 pass')
+            print('公募基金详情 pass')
         except Exception as e:
             print('公募基金详情 fail', format(e))
         time.sleep(2)
@@ -486,7 +486,7 @@ class TestPublicFund(MyTest):
         error_mes = public.find_element(
             'xpath=>//*[@id="fund_full_name"]').text  # 基金全称
         try:
-            assert error_mes == u'华夏成长证券投资基金'
+            assert error_mes == u'易方达天天理财货币A'
             print('基本信息 pass')
         except Exception as e:
             print('基本信息 fail', format(e))
@@ -497,7 +497,7 @@ class TestPublicFund(MyTest):
             'xpath=>//*[@id="infoDetail"]/div[2]').text
         error_mes = error_mes1.split('：')[0]  # # 获取这句话逗号前的语句
         try:
-            assert error_mes == u'董阳阳先生'
+            assert error_mes == u'刘朝阳女士'
             print('投资经理简介 pass')
         except Exception as e:
             print('投资经理简介 fail', format(e))
