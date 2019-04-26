@@ -156,4 +156,3 @@ class TestIndustryData(MyTest):
         """指数列表"""
         industry = IndustryData(self.driver)
         industry.industry_data_list()
-
