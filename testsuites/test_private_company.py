@@ -1,6 +1,6 @@
 import time
 from pageobjects.private_company import PrivateCompany
-from testsuites.MyTest import MyTest
+from testsuites.my_test import MyTest
 
 
 class TestPrivateCompany(MyTest):

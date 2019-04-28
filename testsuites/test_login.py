@@ -1,6 +1,6 @@
 import time
 from pageobjects.login import Login
-from testsuites.MyTest import MyTest
+from testsuites.my_test import MyTest
 
 
 class TestLogin(MyTest):

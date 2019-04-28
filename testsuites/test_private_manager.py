@@ -1,6 +1,6 @@
 import time
 from pageobjects.private_manager import PrivateManager
-from testsuites.MyTest import MyTest
+from testsuites.my_test import MyTest
 
 
 class TestPrivateManager(MyTest):

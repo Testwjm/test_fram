@@ -1,6 +1,6 @@
 import time
 from pageobjects.public_manager import PublicManager
-from testsuites.MyTest import MyTest
+from testsuites.my_test import MyTest
 
 
 class TestPublicManager(MyTest):

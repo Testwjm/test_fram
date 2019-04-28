@@ -1,6 +1,6 @@
 import time
 from pageobjects.fund_manager import FundManager
-from testsuites.MyTest import MyTest
+from testsuites.my_test import MyTest
 
 
 class TestFundManager(MyTest):

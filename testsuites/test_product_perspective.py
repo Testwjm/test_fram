@@ -1,6 +1,6 @@
 import time
 from pageobjects.product_perspective import ProductPerspective
-from testsuites.MyTest import MyTest
+from testsuites.my_test import MyTest
 
 
 class TestProductPerspective(MyTest):

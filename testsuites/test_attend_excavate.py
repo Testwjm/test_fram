@@ -1,6 +1,6 @@
 import time
 from pageobjects.attend_excavate import AttendExcavate
-from testsuites.MyTest import MyTest
+from testsuites.my_test import MyTest
 
 
 class TestAttendExcavate(MyTest):

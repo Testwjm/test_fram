@@ -1,6 +1,6 @@
 import time
 from pageobjects.homepage import HomePage
-from testsuites.MyTest import MyTest
+from testsuites.my_test import MyTest
 
 
 class TestHomePage(MyTest):

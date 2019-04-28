@@ -1,5 +1,5 @@
 import time
-from testsuites.MyTest import MyTest
+from testsuites.my_test import MyTest
 from pageobjects.my import My
 
 

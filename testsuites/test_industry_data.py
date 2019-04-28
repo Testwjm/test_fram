@@ -1,6 +1,6 @@
 import time
 from pageobjects.industry_data import IndustryData
-from testsuites.MyTest import MyTest
+from testsuites.my_test import MyTest
 
 
 class TestIndustryData(MyTest):

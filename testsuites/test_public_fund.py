@@ -1,6 +1,6 @@
 import time
 from pageobjects.public_fund import PublicFund
-from testsuites.MyTest import MyTest
+from testsuites.my_test import MyTest
 
 
 class TestPublicFund(MyTest):
