@@ -74,7 +74,7 @@ class TestDataUpload(MyTest):
         # 断言，期货持仓交易明细表上传
         error_mes = data.find_element('xpath=>//*[@id="myModal"]/div/div/div[1]/h4/span').text
         try:
-            assert error_mes == u'请上传该产品的期货持仓交易'
+            assert error_mes == u'请上传该产品的期货持仓交易明细表'
             print('期货持仓交易明细表上传 pass')
         except Exception as e:
             print('期货持仓交易明细表上传 fail', format(e))
