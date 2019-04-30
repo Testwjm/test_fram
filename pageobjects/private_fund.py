@@ -20,6 +20,7 @@ class PrivateFund(BasePage):
     excel_data = 'xpath=>//*[@id="netTbl"]/div[1]/div[1]/div/div/ul/li[2]'  # ms-excel
     y1_rank = 'xpath=>//*[@id="rankingDate"]/button[3]'  # 近一年
     week_index = 'xpath=>//*[@id="freqDiv"]/div[1]'  # 周频指标
+    base_info = 'xpath=>//*[@id="menuUl"]/li[1]/a'  # 基本信息
     nv_attribution = 'xpath=>//*[@id="menuImg3"]'  # 净值归因
     ff_model = 'xpath=>//*[@id="tabs"]/ul/li[2]'  # FF模型
     barra_model = 'xpath=>//*[@id="tabs"]/ul/li[3]'  # barra模型
@@ -75,6 +76,11 @@ class PrivateFund(BasePage):
     def private_fund_week_index(self):
         """周频指标"""
         self.click(self.week_index)
+        time.sleep(5)
+
+    def private_fund_info(self):
+        """基本信息"""
+        self.click(self.base_info)
         time.sleep(5)
 
     def private_fund_nv(self):

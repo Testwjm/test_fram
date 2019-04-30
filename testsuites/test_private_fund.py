@@ -763,6 +763,48 @@ class TestPrivateFund(MyTest):
         time.sleep(2)
 
     def test_private_fund_case7(self):
+        """基本信息"""
+        private = PrivateFund(self.driver)
+        private.execute_script_up()
+        time.sleep(2)
+        private.private_fund_info()
+        # 断言，基本信息
+        error_mes = private.find_element(
+            'xpath=>//*[@id="fundName"]').text  # 太平洋证券-合盈2号
+        try:
+            assert error_mes == u'鹏华资产-清水源'
+            print('基本信息 pass')
+        except Exception as e:
+            print('基本信息 fail', format(e))
+            print(error_mes)
+        time.sleep(2)
+        # 断言，投资经理简介
+        error_mes1 = private.find_element(
+            'xpath=>//*[@id="infoDetail"]/div[2]/span').text
+        error_mes = error_mes1.split('：')[0]  # 获取这句话逗号前的语句
+        try:
+            assert error_mes == u'冯文光先生'
+            print('投资经理简介 pass')
+        except Exception as e:
+            print('投资经理简介 fail', format(e))
+            print(error_mes)
+        time.sleep(2)
+        # 断言，投资顾问简介
+        error_mes1 = private.find_element(
+            'xpath=>//*[@id="proFile"]').text
+        error_mes = error_mes1.split('，')[0]  # 获取这句话逗号前的语句
+        try:
+            assert error_mes == u'深圳清水源投资管理有限公司成立于2011年10月'
+            print('投资顾问简介 pass')
+        except Exception as e:
+            print('投资顾问简介 fail', format(e))
+            print(error_mes)
+        time.sleep(2)
+        # 浏览器跳到最上面
+        private.execute_script_up()  # 浏览器往上
+        time.sleep(2)
+
+    def test_private_fund_case8(self):
         """净值归因"""
         private = PrivateFund(self.driver)
         private.execute_script_up()
@@ -1046,7 +1088,7 @@ class TestPrivateFund(MyTest):
             print(error_mes)
         time.sleep(2)
 
-    def test_private_fund_case8(self):
+    def test_private_fund_case9(self):
         """FF模型"""
         private = PrivateFund(self.driver)
         private.private_fund_ff()
@@ -1418,7 +1460,7 @@ class TestPrivateFund(MyTest):
         private.execute_script_up()  # 浏览器往上
         time.sleep(3)
 
-    def test_private_fund_case9(self):
+    def test_private_fund_case91(self):
         """Barra模型"""
         private = PrivateFund(self.driver)
         private.private_fund_barra()
@@ -1489,7 +1531,7 @@ class TestPrivateFund(MyTest):
         private.find_element('xpath=>//*[@id="barra_bck"]/button[4]').click()  # 点击有效性研判
         time.sleep(3)
 
-    def test_private_fund_case91(self):
+    def test_private_fund_case92(self):
         """情景分析"""
         private = PrivateFund(self.driver)
         private.private_fund_scene()
