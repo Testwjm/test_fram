@@ -28,13 +28,15 @@ class StrategyMvModel(BasePage):
     bind_subfundmax = 'xpath=>//*[@id="subfundMax"]'  # 子基金权重上限
     target_next_step = 'xpath=>//*[@id="nextBtn2"]'  # 下一步
     sure = 'xpath=>//*[@id="createCompolicy"]/div/div/div[8]/div[3]/button[2]'  # 确定
-
-    # def date_name(self):
-    #     from datetime import datetime
-    #     from random import randint
-    #     n = randint(100, 99)
-    #     s = str(datetime.now().date()) + "-" + str(n)
-    #     return s
+    nv_y1 = 'xpath=>//*[@id="lastYear"]'  # 近一年
+    nv_download = 'xpath=>//*[@id="netTbl"]/div[1]/div[1]/div/div/button'  # 下载
+    nv_csv = 'xpath=>//*[@id="netTbl"]/div[1]/div[1]/div/div/ul/li[1]'  # CSV
+    nv_excel = 'xpath=>//*[@id="netTbl"]/div[1]/div[1]/div/div/ul/li[2]'  # Excel
+    position_analysis = 'xpath=>//*[@id="menuUl"]/li[2]'  # 持仓分析
+    nv_attribution = 'xpath=>//*[@id="menuUl"]/li[3]'  # 净值归因
+    scenario_analysis = 'xpath=>//*[@id="menuUl"]/li[4]'  # 情景分析
+    delete = 'xpath=>//*[@id="policyCom"]/ul/li[1]/div[1]/span[1]/button'  # 删除
+    delete_sure = 'xpath=>//*[@id="layui-layer1"]/div[3]/a[1]'  # 确认删除
 
     def strategy_mv_login(self):
         """登录"""
@@ -55,7 +57,7 @@ class StrategyMvModel(BasePage):
 
     def strategy_mv_establish(self):
         """创建新的策略组合"""
-        self.type(self.strategy_name, 'MV模型-')
+        self.type(self.strategy_name, 'MV模型-'+str(random.randrange(1000, 10000)))
         time.sleep(2)
         self.type(self.investment_amount, '1000')
         time.sleep(2)
@@ -97,3 +99,55 @@ class StrategyMvModel(BasePage):
         """策略组合"""
         self.click(self.sure)
         time.sleep(15)
+
+    def strategy_mv_head(self):
+        """头部"""
+        pass
+
+    def strategy_mv_history(self):
+        """历史净值"""
+        self.click(self.nv_y1)
+        time.sleep(5)
+        self.click(self.nv_download)
+        time.sleep(2)
+        self.click(self.nv_csv)
+        time.sleep(3)
+        self.click(self.nv_download)
+        time.sleep(2)
+        self.click(self.nv_excel)
+        time.sleep(3)
+
+    def strategy_mv_index(self):
+        """指标"""
+        pass
+
+    def strategy_mv_position(self):
+        """持仓分析"""
+        self.click(self.position_analysis)
+        time.sleep(5)
+
+    def strategy_mv_attribution(self):
+        """净值归因"""
+        self.click(self.nv_attribution)
+        time.sleep(5)
+
+    def strategy_mv_scene(self):
+        """情景分析"""
+        self.click(self.scenario_analysis)
+        time.sleep(5)
+
+    def strategy_mv_delete(self):
+        """删除"""
+        self.click(self.asset_allocation)
+        time.sleep(3)
+        self.click(self.strategy_combination)
+        time.sleep(5)
+        self.click(self.delete)
+        time.sleep(3)
+        self.click(self.delete_sure)
+        time.sleep(5)
+
+    def strategy_mv_exponent(self):
+        """指数"""
+        pass
+
