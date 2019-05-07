@@ -1,19 +1,19 @@
 import time
-from pageobjects.strategy_mv_model import StrategyMvModel
+from pageobjects.strategy_custom_model import StrategyCustomModel
 from testsuites.my_test import MyTest
 
 
 class TestStrategyMvModel(MyTest):
-    """策略组合-MV模型"""
+    """策略组合-自定义子策略权重"""
 
-    def test_strategy_mv_case1(self):
+    def test_strategy_custom_case1(self):
         """登录"""
-        strategy = StrategyMvModel(self.driver)
-        strategy.strategy_mv_login()
+        strategy = StrategyCustomModel(self.driver)
+        strategy.strategy_custom_login()
 
     def test_strategy_mv_case2(self):
         """创建新的策略组合"""
-        strategy = StrategyMvModel(self.driver)
+        strategy = StrategyCustomModel(self.driver)
         # 断言，创建产品组合
         error_mes = strategy.find_element(
             'xpath=>//*[@id="createCompolicy"]/div/div/div[1]/div[2]/div[1]/div[2]/span').text
@@ -24,330 +24,43 @@ class TestStrategyMvModel(MyTest):
             print('创建策略组合 fail', format(e))
             print(error_mes)
         time.sleep(2)
-        strategy.strategy_mv_establish()
-
-    def test_strategy_mv_case3(self):
-        """目标设定"""
-        strategy = StrategyMvModel(self.driver)
-        # 断言，目标设定
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="createCompolicy"]/div/div/div[2]/div[2]/div[2]/span').text
-        try:
-            assert error_mes == u'目标设定'
-            print('目标设定 pass')
-        except Exception as e:
-            print('目标设定 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，目标函数选择
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="targetSet"]/div[1]/span').text
-        try:
-            assert error_mes == u'目标函数选择'
-            print('目标函数选择 pass')
-        except Exception as e:
-            print('目标函数选择 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，选择约束条件
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="conditionSet"]/div[1]/span').text
-        try:
-            assert error_mes == u'选择约束条件'
-            print('选择约束条件 pass')
-        except Exception as e:
-            print('选择约束条件 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，指数名称
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="step2Tbl"]/tbody/tr[1]/td[2]').text
-        try:
-            assert error_mes == u'私募全市场指数'
-            print('指数名称 pass')
-        except Exception as e:
-            print('指数名称 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，区间年化收益率
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="step2Tbl"]/tbody/tr[1]/td[3]').text
-        try:
-            assert error_mes != u'--'
-            print('区间年化收益率 pass')
-        except Exception as e:
-            print('区间年化收益率 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，区间最大回撤
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="step2Tbl"]/tbody/tr[1]/td[4]').text
-        try:
-            assert error_mes != u'--'
-            print('区间最大回撤 pass')
-        except Exception as e:
-            print('区间最大回撤 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，区间年化夏普比
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="step2Tbl"]/tbody/tr[1]/td[5]').text
-        try:
-            assert error_mes != u'--'
-            print('区间年化夏普比 pass')
-        except Exception as e:
-            print('区间年化夏普比 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，区间年化波动率
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="step2Tbl"]/tbody/tr[1]/td[6]').text
-        try:
-
-            assert error_mes != u'--'
-            print('区间年化波动率 pass')
-        except Exception as e:
-            print('区间年化波动率 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        strategy.strategy_mv_target()
+        strategy.strategy_custom_establish()
 
     def test_strategy_mv_case4(self):
         """策略组合"""
-        strategy = StrategyMvModel(self.driver)
-        # 断言，Benchmark
+        strategy = StrategyCustomModel(self.driver)
+        # 断言，仓位动态调整图
         error_mes = strategy.find_element(
-            'xpath=>//*[@id="step3showInfo"]/tbody/tr/td[1]/div[2]').text
+            'xpath=>//*[@id="createCompolicy"]/div/div/div[10]/div[2]/div[2]/div/div[1]/div/span').text
         try:
-            assert error_mes == u'沪深300,南华商品指数'
-            print('Benchmark pass')
+            assert error_mes == u'仓位动态调整图'
+            print('仓位动态调整图 pass')
         except Exception as e:
-            print('Benchmark fail', format(e))
+            print('仓位动态调整图 fail', format(e))
             print(error_mes)
         time.sleep(2)
-        # 断言，配置模式
+        # 断言，配置权重
         error_mes = strategy.find_element(
-            'xpath=>//*[@id="step3showInfo"]/tbody/tr/td[2]/div[2]').text
+            'xpath=>//*[@id="createCompolicy"]/div/div/div[10]/div[2]/div[3]/ul/li[1]').text
         try:
-            assert error_mes == u'MV模型'
-            print('配置模式 pass')
+            assert error_mes == u'配置权重'
+            print('配置权重 pass')
         except Exception as e:
-            print('配置模式 fail', format(e))
+            print('配置权重 fail', format(e))
             print(error_mes)
         time.sleep(2)
-        # 断言，内外样本区间
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="step3showInfo"]/tbody/tr/td[3]/div[2]').text
-        try:
-            assert error_mes != u'--'
-            print('内外样本区间 pass')
-        except Exception as e:
-            print('内外样本区间 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，目标既定
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="step3showInfo"]/tbody/tr/td[4]/div[2]').text
-        try:
-            assert error_mes == u'年化夏普比最大'
-            print('目标既定 pass')
-        except Exception as e:
-            print('目标既定 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，全样本区间约束条件
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="Conditions"]').text
-        try:
-            assert error_mes == u'年化收益率>=2%,年化波动<=3%,无风险收益率5% .'
-            print('全样本区间约束条件 pass')
-        except Exception as e:
-            print('全样本区间约束条件 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，指数名称
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="creatPrctbl"]/tbody/tr[1]/td[2]').text
-        try:
-            assert error_mes == u'私募全市场指数'
-            print('指数名称 pass')
-        except Exception as e:
-            print('指数名称 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，最大回撤
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="creatPrctbl"]/tbody/tr[1]/td[3]').text
-        try:
-            assert error_mes != u'--'
-            print('最大回撤 pass')
-        except Exception as e:
-            print('最大回撤 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，年化收益率
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="creatPrctbl"]/tbody/tr[1]/td[4]').text
-        try:
-            assert error_mes != u'--'
-            print('年化收益率 pass')
-        except Exception as e:
-            print('年化收益率 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，年化夏普比
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="creatPrctbl"]/tbody/tr[1]/td[5]').text
-        try:
-            assert error_mes != u'--'
-            print('年化夏普比 pass')
-        except Exception as e:
-            print('年化夏普比 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，年化波动率
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="creatPrctbl"]/tbody/tr[1]/td[6]').text
-        try:
-            assert error_mes != u'--'
-            print('年化波动率 pass')
-        except Exception as e:
-            print('年化波动率 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，配置比例
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="creatPrctbl"]/tbody/tr[1]/td[7]').text
-        try:
-            assert error_mes != u'--'
-            print('配置比例 pass')
-        except Exception as e:
-            print('配置比例 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，拟投资金额（万元
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="creatPrctbl"]/tbody/tr[1]/td[8]').text
-        try:
-            assert error_mes != u'--'
-            print('拟投资金额（万元) pass')
-        except Exception as e:
-            print('拟投资金额（万元) fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，有效边界
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="createCompolicy"]/div/div/div[8]/div[2]/div[4]/div[1]/div[1]/div/span').text
-        try:
-            assert error_mes == u'有效边界'
-            print('有效边界 pass')
-        except Exception as e:
-            print('有效边界 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，组合预期业绩指标
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="mvTbldiv"]/div/div/span').text
-        try:
-            assert error_mes == u'组合预期业绩指标'
-            print('组合预期业绩指标 pass')
-        except Exception as e:
-            print('组合预期业绩指标 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
+        strategy.find_element('xpath=>//*[@id="weightReset"]').click()  # 点击重置
+        time.sleep(3)
+        strategy.find_element('xpath=>//*[@id="createCompolicy"]/div/div/div[10]/div[2]/div[3]/ul/'
+                              'li[2]/div/p[1]/input').send_keys('10')  # hs300输入10
+        time.sleep(3)
+        strategy.find_element('xpath=>//*[@id="configureWeights"]').click()  # 点击确认
+        time.sleep(3)
+        strategy.find_element('xpath=>//*[@id="layui-layer1"]/div[3]/a[1]').click()  # 点击二次确认
+        time.sleep(5)
         # 断言，累计收益率
         error_mes = strategy.find_element(
-            'xpath=>//*[@id="mvTbldiv"]/table/tbody/tr[1]/td[1]/div[2]').text
-        try:
-            assert error_mes != u'--'
-            print('累计收益率 pass')
-        except Exception as e:
-            print('累计收益率 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，年化收益率
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="mvTbldiv"]/table/tbody/tr[1]/td[2]/div[2]').text
-        try:
-            assert error_mes != u'--'
-            print('年化收益率 pass')
-        except Exception as e:
-            print('年化收益率 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，年化波动率
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="mvTbldiv"]/table/tbody/tr[1]/td[3]/div[2]').text
-        try:
-            assert error_mes != u'--'
-            print('年化波动率 pass')
-        except Exception as e:
-            print('年化波动率 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，年化下行标准差
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="mvTbldiv"]/table/tbody/tr[2]/td[1]/div[2]').text
-        try:
-            assert error_mes != u'--'
-            print('年化下行标准差 pass')
-        except Exception as e:
-            print('年化下行标准差 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，Sortino比率
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="mvTbldiv"]/table/tbody/tr[2]/td[2]/div[2]').text
-        try:
-            assert error_mes != u'--'
-            print('Sortino比率 pass')
-        except Exception as e:
-            print('Sortino比率 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，年化夏普比
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="mvTbldiv"]/table/tbody/tr[2]/td[3]/div[2]').text
-        try:
-            assert error_mes != u'--'
-            print('年化夏普比 pass')
-        except Exception as e:
-            print('年化夏普比 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，最大回撤
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="mvTbldiv"]/table/tbody/tr[3]/td[1]/div[2]').text
-        try:
-            assert error_mes != u'--'
-            print('最大回撤 pass')
-        except Exception as e:
-            print('最大回撤 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，最大回撤发生时间
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="mvTbldiv"]/table/tbody/tr[3]/td[2]/div[2]').text
-        try:
-            assert error_mes != u'--'
-            print('最大回撤发生时间 pass')
-        except Exception as e:
-            print('最大回撤发生时间 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，最大回撤形成期
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="mvTbldiv"]/table/tbody/tr[3]/td[3]/div[2]').text
-        try:
-            assert error_mes != u'--'
-            print('最大回撤形成期 pass')
-        except Exception as e:
-            print('最大回撤形成期 fail', format(e))
-            print(error_mes)
-        time.sleep(2)
-        # 断言，累计收益率
-        error_mes = strategy.find_element(
-            'xpath=>//*[@id="createCompolicy"]/div/div/div[8]/div[2]/div[5]/div/div[1]/div/span').text
+            'xpath=>//*[@id="createCompolicy"]/div/div/div[10]/div[2]/div[4]/div/div[1]/div/span').text
         try:
             assert error_mes == u'累计收益率'
             print('累计收益率 pass')
@@ -357,7 +70,7 @@ class TestStrategyMvModel(MyTest):
         time.sleep(2)
         # 断言，期间收益率
         error_mes = strategy.find_element(
-            'xpath=>//*[@id="createCompolicy"]/div/div/div[8]/div[2]/div[6]/div/div[1]/div/span').text
+            'xpath=>//*[@id="createCompolicy"]/div/div/div[10]/div[2]/div[5]/div/div[1]/div/span').text
         try:
             assert error_mes == u'期间收益率'
             print('期间收益率 pass')
@@ -365,14 +78,24 @@ class TestStrategyMvModel(MyTest):
             print('期间收益率 fail', format(e))
             print(error_mes)
         time.sleep(2)
+        # 断言，动态回撤
+        error_mes = strategy.find_element(
+            'xpath=>//*[@id="createCompolicy"]/div/div/div[10]/div[2]/div[6]/div[1]/div[1]/span').text
+        try:
+            assert error_mes == u'动态回撤'
+            print('动态回撤 pass')
+        except Exception as e:
+            print('动态回撤 fail', format(e))
+            print(error_mes)
+        time.sleep(2)
         strategy.execute_script_down()
         time.sleep(2)
-        strategy.strategy_mv_compose()
+        strategy.strategy_custom_compose()
 
     def test_strategy_mv_case5(self):
         """头部"""
-        strategy = StrategyMvModel(self.driver)
-        strategy.strategy_mv_head()
+        strategy = StrategyCustomModel(self.driver)
+        strategy.strategy_custom_head()
         # 断言，投资策略
         error_mes = strategy.find_element(
             'xpath=>//*[@id="Policy"]').text
@@ -447,7 +170,7 @@ class TestStrategyMvModel(MyTest):
         error_mes = strategy.find_element(
             'xpath=>//*[@id="modalStyle"]').text
         try:
-            assert error_mes == u'MV模型'
+            assert error_mes == u'自定义子策略权重模型'
             print('配置模型 pass')
         except Exception as e:
             print('配置模型 fail', format(e))
@@ -457,7 +180,7 @@ class TestStrategyMvModel(MyTest):
         error_mes = strategy.find_element(
             'xpath=>//*[@id="target"]').text
         try:
-            assert error_mes == u'年化夏普比最大'
+            assert error_mes == u''
             print('既定目标 pass')
         except Exception as e:
             print('既定目标 fail', format(e))
@@ -466,8 +189,8 @@ class TestStrategyMvModel(MyTest):
 
     def test_strategy_mv_case6(self):
         """历史净值"""
-        strategy = StrategyMvModel(self.driver)
-        strategy.strategy_mv_history()
+        strategy = StrategyCustomModel(self.driver)
+        strategy.strategy_custom_history()
         # 断言，净值日期
         error_mes = strategy.find_element(
             'xpath=>//*[@id="nav-main-grid"]/tbody/tr[1]/td[1]').text
@@ -511,8 +234,8 @@ class TestStrategyMvModel(MyTest):
 
     def test_strategy_mv_case7(self):
         """指标"""
-        strategy = StrategyMvModel(self.driver)
-        strategy.strategy_mv_index()
+        strategy = StrategyCustomModel(self.driver)
+        strategy.strategy_custom_index()
         '''收益指标'''
         # 断言，统计区间
         error_mes = strategy.find_element(
@@ -714,10 +437,10 @@ class TestStrategyMvModel(MyTest):
 
     def test_strategy_mv_case8(self):
         """持仓分析"""
-        strategy = StrategyMvModel(self.driver)
+        strategy = StrategyCustomModel(self.driver)
         strategy.execute_script_up()
         time.sleep(2)
-        strategy.strategy_mv_position()
+        strategy.strategy_custom_position()
         '''策略配置'''
         # 断言，期初净资产
         error_mes = strategy.find_element('xpath=>//*[@id="policyTbl"]/tbody/tr[1]/td[2]').text
@@ -785,10 +508,10 @@ class TestStrategyMvModel(MyTest):
 
     def test_strategy_mv_case9(self):
         """净值归因"""
-        strategy = StrategyMvModel(self.driver)
+        strategy = StrategyCustomModel(self.driver)
         strategy.execute_script_up()
         time.sleep(2)
-        strategy.strategy_mv_attribution()
+        strategy.strategy_custom_attribution()
         # 断言，大类资产占比情况
         error_mes1 = strategy.find_element('xpath=>//*[@id="comment1"]').text
         error_mes = error_mes1.split('，')[0]
@@ -822,16 +545,16 @@ class TestStrategyMvModel(MyTest):
 
     def test_strategy_mv_case91(self):
         """情景分析"""
-        strategy = StrategyMvModel(self.driver)
+        strategy = StrategyCustomModel(self.driver)
         strategy.execute_script_up()
         time.sleep(2)
-        strategy.strategy_mv_scene()
+        strategy.strategy_custom_scene()
         '''压力测试'''
         # 断言，A股市场事件
         error_mes = strategy.find_element(
             'xpath=>//*[@id="stressTestTab"]/tbody/tr[2]/td[1]').text
         try:
-            assert error_mes == u'中美贸易战正式开战'
+            assert error_mes == u'中美贸易战升级'
             print('A股市场事件 pass')
         except Exception as e:
             print('A股市场事件 fail', format(e))
@@ -841,8 +564,8 @@ class TestStrategyMvModel(MyTest):
         error_mes = strategy.find_element(
             'xpath=>//*[@id="stressTestTab"]/tbody/tr[2]/td[2]').text
         try:
-            assert error_mes == u'2018-06-15 - 2018-07-06'
-            print('A股市场日期范围 pass')
+            assert error_mes == u'2018-08-01 - 2018-08-20'
+            print('A股市场日期范围pass')
         except Exception as e:
             print('A股市场日期范围 fail', format(e))
             print(error_mes)
@@ -970,8 +693,8 @@ class TestStrategyMvModel(MyTest):
 
     def test_strategy_mv_case92(self):
         """删除"""
-        strategy = StrategyMvModel(self.driver)
-        strategy.strategy_mv_delete()
+        strategy = StrategyCustomModel(self.driver)
+        strategy.strategy_custom_delete()
         # 断言，删除产品
         error_mes = strategy.find_element(
             'xpath=>//*[@id="policyCom"]/ul/li[1]/div[1]/a[1]/span').text
@@ -985,8 +708,8 @@ class TestStrategyMvModel(MyTest):
 
     def test_strategy_mv_case93(self):
         """指数"""
-        strategy = StrategyMvModel(self.driver)
-        strategy.strategy_mv_exponent()
+        strategy = StrategyCustomModel(self.driver)
+        strategy.strategy_custom_exponent()
         '''策略指数累计收益率'''
         # 断言，策略指数累计收益率
         error_mes = strategy.find_element('xpath=>//*[@id="policyCom"]/div[2]/div[3]/span').text

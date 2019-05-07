@@ -877,24 +877,24 @@ class TestStrategyBlModel(MyTest):
         time.sleep(2)
         strategy.strategy_bl_scene()
         '''压力测试'''
-        # 断言，A股市场基金涨跌幅
+        # 断言，A股市场事件
         error_mes = strategy.find_element(
             'xpath=>//*[@id="stressTestTab"]/tbody/tr[2]/td[1]').text
         try:
             assert error_mes == u'中美贸易战升级'
-            print('A股市场基金涨跌幅 pass')
+            print('A股市场事件 pass')
         except Exception as e:
-            print('A股市场基金涨跌幅 fail', format(e))
+            print('A股市场事件 fail', format(e))
             print(error_mes)
         time.sleep(2)
-        # 断言，A股市场基金涨跌幅
+        # 断言，A股市场日期范围
         error_mes = strategy.find_element(
             'xpath=>//*[@id="stressTestTab"]/tbody/tr[2]/td[2]').text
         try:
             assert error_mes == u'2018-08-01 - 2018-08-20'
-            print('A股市场基金涨跌幅 pass')
+            print('A股市场日期范围 pass')
         except Exception as e:
-            print('A股市场基金涨跌幅 fail', format(e))
+            print('A股市场日期范围 fail', format(e))
             print(error_mes)
         time.sleep(2)
         # 断言，A股市场基金涨跌幅
